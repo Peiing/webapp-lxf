@@ -8,6 +8,7 @@ web framework
 import os, asyncio, logging, functools, inspect
 
 from aiohttp import web
+from apis import APIError
 
 def get(path):
     '''
