@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+'''
+orm framework
+'''
+
 import asyncio, logging
 
 import aiomysql
@@ -9,6 +13,9 @@ def log(sql, args=()):
     logging.info('SQL: %s' % sql)
 
 async def create_pool(loop, **kw):
+    '''
+    create database connection pool
+    '''
     logging.info('create database connection pool...')
     global __pool
     __pool = await aiomysql.create_pool(
@@ -111,7 +118,7 @@ class ModelMetaclass(type):
                 logging.info('  found mapping: %s ==> %s' % (k, v))
                 mappings[k] = v
                 if v.primary_key:
-                    # 找到主键:
+                    # found primary key
                     if primaryKey:
                         raise StandardError('Duplicate primary key for field: %s' % k)
                     primaryKey = k
@@ -122,10 +129,10 @@ class ModelMetaclass(type):
         for k in mappings.keys():
             attrs.pop(k)
         escaped_fields = list(map(lambda f: '`%s`' % f, fields))
-        attrs['__mappings__'] = mappings # 保存属性和列的映射关系
-        attrs['__table__'] = tableName
-        attrs['__primary_key__'] = primaryKey # 主键属性名
-        attrs['__fields__'] = fields # 除主键外的属性名
+        attrs['__mappings__'] = mappings # mapping attrs to dict
+        attrs['__table__'] = tableName # save table name
+        attrs['__primary_key__'] = primaryKey # primary key name
+        attrs['__fields__'] = fields # fields name
         attrs['__select__'] = 'select `%s`, %s from `%s`' % (primaryKey, ', '.join(escaped_fields), tableName)
         attrs['__insert__'] = 'insert into `%s` (%s, `%s`) values (%s)' % (tableName, ', '.join(escaped_fields), primaryKey, create_args_string(len(escaped_fields) + 1))
         attrs['__update__'] = 'update `%s` set %s where `%s`=?' % (tableName, ', '.join(map(lambda f: '`%s`=?' % (mappings.get(f).name or f), fields)), primaryKey)
