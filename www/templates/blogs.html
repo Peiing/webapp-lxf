@@ -8,9 +8,9 @@
         {% for blog in blogs %}
             <article class="uk-article">
                 <h2><a href="/blog/{{ blog.id }}">{{ blog.name }}</a></h2>
-                <p class="uk-article-meta">发表于{{ blog.created_at|datetime}}</p>
+                <p class="uk-article-meta">Created at{{ blog.created_at|datetime}}</p>
                 <p>{{ blog.summary }}</p>
-                <p><a href="/blog/{{ blog.id }}">继续阅读 <i class="uk-icon-angle-double-right"></i></a></p>
+                <p><a href="/blog/{{ blog.id }}">Detail <i class="uk-icon-angle-double-right"></i></a></p>
             </article>
             <hr class="uk-article-divider">
         {% endfor %}
@@ -18,12 +18,12 @@
 
     <div class="uk-width-medium-1-4">
         <div class="uk-panel uk-panel-header">
-            <h3 class="uk-panel-title">友情链接</h3>
+            <h3 class="uk-panel-title">Links</h3>
             <ul class="uk-list uk-list-line">
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">编程</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">读书</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">Python教程</a></li>
-                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">Git教程</a></li>
+                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">123</a></li>
+                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">abc</a></li>
+                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">hahaha</a></li>
+                <li><i class="uk-icon-thumbs-o-up"></i> <a target="_blank" href="#">:D</a></li>
             </ul>
         </div>
     </div>
