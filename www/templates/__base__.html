@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     {% block meta %}<!-- block meta  -->{% endblock %}
-    <title>{% block title %} ? {% endblock %} - Awesome Python Webapp</title>
+    <title>{% block title %} ? {% endblock %} - Python3 Webapp</title>
     <link rel="stylesheet" href="/static/css/uikit.min.css">
     <link rel="stylesheet" href="/static/css/uikit.gradient.min.css">
     <link rel="stylesheet" href="/static/css/awesome.css" />
@@ -20,9 +20,9 @@
         <div class="uk-container uk-container-center">
             <a href="/" class="uk-navbar-brand">Awesome</a>
             <ul class="uk-navbar-nav">
-                <li data-url="blogs"><a href="/"><i class="uk-icon-home"></i> 日志</a></li>
-                <li><a target="_blank" href="#"><i class="uk-icon-book"></i> 教程</a></li>
-                <li><a target="_blank" href="#"><i class="uk-icon-code"></i> 源码</a></li>
+                <li data-url="blogs"><a href="/"><i class="uk-icon-home"></i> Blogs</a></li>
+                <li><a target="_blank" href="#"><i class="uk-icon-book"></i> Tutorial</a></li>
+                <li><a target="_blank" href="#"><i class="uk-icon-code"></i> Source</a></li>
             </ul>
             <div class="uk-navbar-flip">
                 <ul class="uk-navbar-nav">
@@ -31,13 +31,13 @@
                         <a href="#0"><i class="uk-icon-user"></i> {{ __user__.name }}</a>
                         <div class="uk-dropdown uk-dropdown-navbar">
                             <ul class="uk-nav uk-nav-navbar">
-                                <li><a href="/signout"><i class="uk-icon-sign-out"></i> 登出</a></li>
+                                <li><a href="/signout"><i class="uk-icon-sign-out"></i> Log Out</a></li>
                             </ul>
                         </div>
                     </li>
                 {% else %}
-                    <li><a href="/signin"><i class="uk-icon-sign-in"></i> 登陆</a></li>
-                    <li><a href="/register"><i class="uk-icon-edit"></i> 注册</a></li>
+                    <li><a href="/signin"><i class="uk-icon-sign-in"></i> Login</a></li>
+                    <li><a href="/register"><i class="uk-icon-edit"></i> Register</a></li>
                 {% endif %}
                 </ul>
             </div>
@@ -62,7 +62,7 @@
                     <a target="_blank" href="#" class="uk-icon-button uk-icon-linkedin-square"></a>
                     <a target="_blank" href="#" class="uk-icon-button uk-icon-twitter"></a>
                 </p>
-                <p>Powered by <a href="#">Awesome Python Webapp</a>. Copyright &copy; 2014. [<a href="/manage/" target="_blank">Manage</a>]</p>
+                <p>Powered by <a href="#">Awesome Python Webapp</a>. Copyright &copy; 2017. [<a href="/manage/" target="_blank">Manage</a>]</p>
                 <p><a href="http://www.liaoxuefeng.com/" target="_blank">www.liaoxuefeng.com</a>. All rights reserved.</p>
                 <a target="_blank" href="#"><i class="uk-icon-html5" style="font-size:64px; color: #444;"></i></a>
             </div>
